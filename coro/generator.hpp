@@ -1,3 +1,6 @@
+// has been taken from cppcoro with a slight modification
+// addition of consume_and_increment
+
 #ifndef __STD_GENERATOR_INCLUDED
 #define __STD_GENERATOR_INCLUDED
 ///////////////////////////////////////////////////////////////////////////////
