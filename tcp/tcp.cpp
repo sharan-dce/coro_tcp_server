@@ -83,7 +83,6 @@ auto get_sock_description (const sockaddr& addr) -> tcp_server_nb::sock_descript
 std::expected<std::pair<tcp_sock, tcp_server_nb::sock_description>, accept_error> tcp_server_nb::accept() {
     sockaddr addr;
     socklen_t len = sizeof(addr);
-    // todo: add addr and len to tcp_sock, so we can query this data we get here
     int new_fd = ::accept(fd, &addr, &len);
     if (new_fd == -1)
         return std::unexpected{accept_error{errno}};
