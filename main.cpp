@@ -43,6 +43,9 @@ coro::task<void> connection_handler(net::tcp_sock sock) {
 }
 
 int main(int argc, char* argv[]) {
+    if (argc == 1) {
+        throw std::runtime_error("No port specified!\n");
+    }
     uint16_t port = std::stoi(argv[1]);
     if (auto server = net::tcp_server_nb::make_server<net::tcp_unspec>(port); server) {
         std::cout << "Starting server at port: " << port << '\n';
