@@ -8,5 +8,5 @@ set(CMAKE_CXX_STANDARD 23)
 add_subdirectory(tcp)
 add_subdirectory(coro)
 
-add_executable(echo_server main.cpp)
+add_executable(echo_server tcp_echo_server.cpp)
 target_link_libraries(echo_server tcp)
